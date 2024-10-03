@@ -1,0 +1,28 @@
+﻿@model List<SignalRWebUI.Dtos.ResultCategoryDto.ResultCategoryDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table>
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.CategoryID</td>
+            <td>@item.CategoryName</td>
+            <td>@item.Status</td>
+            <td><a href="/Category/DeleteCategory/@item.CategoryID">Sil</a></td>
+            <td><a href="/Category/UpdateCategory/@item.CategoryID">Güncelle</a></td>
+        </tr>
+    }
+</table>
+
+<a href="/Category/CreateCategory">Yeni Kategori Ekle</a>

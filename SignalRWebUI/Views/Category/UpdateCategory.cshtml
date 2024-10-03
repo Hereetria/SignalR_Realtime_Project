@@ -1,0 +1,13 @@
+﻿@model SignalRWebUI.Dtos.CategoryDtos.UpdateCategoryDto
+@{
+    ViewData["Title"] = "UpdateCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post">
+    <input type="hidden" asp-for="CategoryID" />
+    <label for="categoryname">Kategori Adı</label>
+    <input type="text" asp-for="CategoryName" name="categoryname" />
+    <br /><br />
+    <button type="submit">Güncelle</button>
+</form>
